@@ -65,7 +65,24 @@ router.post('/bookadded', function (req, res, next) {
             res.send('This book is added to database, name: '+ req.body.name + ' price: £'+ req.body.price)
         }
     })
-}) 
+});
+
+// BARGAIN BOOKS - GET /bargainbooks
+// Fetches all books priced under £20 and displays them
+router.get('/bargainbooks', function(req, res, next) {
+    // SQL query to get books priced under £20
+    let sqlquery = "SELECT * FROM books WHERE price < 20";
+    
+    // Execute the query
+    db.query(sqlquery, (err, result) => {
+        if (err) {
+            // If there's an error, pass it to error handler
+            next(err)
+        }
+        // Pass the bargain books to the template for display
+        res.render("bargainbooks.ejs", {bargainBooks:result})
+    });
+});
 
 // Export the router so it can be used in index.js
 module.exports = router
