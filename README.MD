@@ -68,7 +68,6 @@ The application uses `express-session` to manage user sessions and restricts acc
 - `/users/list` — view registered users
 - `/users/audit` — view login audit history
 - `/users/logout` — logout (must be logged in to logout)
-- `/books/list` — view all books
 - `/books/addbook` — form to add a new book
 - `/books/bookadded` — submit a new book
 - `/books/bargainbooks` — view bargain books
@@ -76,6 +75,7 @@ The application uses `express-session` to manage user sessions and restricts acc
 **Public routes (no login required):**
 - `/` — homepage
 - `/about` — about page
+- `/books/list` — view all books
 - `/users/register` — registration form
 - `/users/registered` — registration confirmation
 - `/users/login` — login form

@@ -56,7 +56,7 @@ router.get('/search-result', function (req, res, next) {
 
 // LIST ALL BOOKS - GET /list
 // Fetches all books from the database and displays them in a list
-router.get('/list', redirectLogin, function(req, res, next) {
+router.get('/list', function(req, res, next) {
     // SQL query to get all books from the database
     let sqlquery = "SELECT * FROM books";
     
